@@ -32,9 +32,9 @@ inherit = bar/master
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
 monitor =
 
-modules-left   = memory network i3
-modules-center = 
-modules-right  = clock volume  battery keyboard pkg
+modules-left   = memory i3
+modules-center = clock 
+modules-right  = pkg volume battery keyboard
 
 
 ;=====================================================
