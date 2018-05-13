@@ -34,7 +34,7 @@ monitor =
 
 modules-left   = memory i3
 modules-center = clock 
-modules-right  = pkg volume battery keyboard
+modules-right  =  volume battery keyboard
 
 
 ;=====================================================
