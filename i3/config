@@ -1,10 +1,10 @@
 #:ArchLabs i3 config
 
 # Xresources      var      value       fallback
-set_from_resource $bg      background  #19043C
-set_from_resource $fg      foreground  #F1F1F1
+set_from_resource $bg      background  #000000
+set_from_resource $fg      foreground  #ffffff
 set_from_resource $black   color0      #19043C
-set_from_resource $red     color1      #EE79A9
+set_from_resource $red     color1      #c40000
 set_from_resource $green   color2      #8C9440
 set_from_resource $yellow  color3      #DE935F
 set_from_resource $blue    color4      #05C6F1
@@ -13,12 +13,12 @@ set_from_resource $cyan    color6      #5E8D87
 set_from_resource $grey    color7      #969CD3
 
 # class                 bd    bg  txt    ind   child_bd
-client.focused          $grey $bg $fg    $blue $grey
-client.unfocused        $grey $bg $black $bg   $bg
-client.focused_inactive $grey $bg $black $bg   $bg
-client.urgent           $red  $bg $red   $red  $red
-client.placeholder      $grey $bg $bg    $bg   $bg
-client.background       $bg
+client.focused        	      	  	   $red $red $black   $blue $red
+client.unfocused        		   $black $black $red $bg   $grey
+client.focused_inactive			   $grey $bg $black $bg   $grey
+client.urgent           		   	 $red  $bg $red   $red  $red
+client.placeholder    		$red $bg $bg    $bg   $bg
+client.background       	      	  $bg
 
 # border & title.. Must be set to border pixel for gaps to work
 for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>"
@@ -90,15 +90,13 @@ exec --no-startup-id lxpolkit
 bindsym Mod+Shift+q kill
 bindsym $Mod+q kill
 
-# launchers
-bindsym Control+space exec --no-startup-id rofr.sh -r
 
 # this is needed for super key to launch rofi
 bindsym Mod1+F1 exec --no-startup-id rofr.sh -r
 
 # core
-bindsym $Mod+e exec --no-startup-id gvim
-bindsym $Mod+t exec exo-open --launch TerminalEmulator
+bindsym $Mod+e exec --no-startup-id emacs
+bindsym $Mod+Return exec --no-startup-id urxvt
 bindsym $Mod+w exec exo-open --launch WebBrowser
 bindsym $Mod+f exec exo-open --launch FileManager
 
@@ -278,6 +276,7 @@ assign [class="(?i)(?:Pidgin)"] → $WS9
 assign [class="(?i)(?:Thunderbird)"] → $WS10
 assign [class="(?i)(?:Texmaker)"] → $WS3
 assign [class="(?i)(?:masterpdfeditor4)"] → $WS4
+assign [class="(?i)(?:emacs)"]  → $WS3
 
 
 # focus, floating, & sticky
